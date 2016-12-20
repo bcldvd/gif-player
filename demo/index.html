@@ -1,0 +1,41 @@
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+<script src="https://cdn.rawgit.com/ctrl-freaks/freezeframe.js/master/build/js/freezeframe.pkgd.js"></script>
+<script src="../src/gif-player.component.js"></script>
+<link type="text/css" rel="stylesheet" href="https://cdn.rawgit.com/ctrl-freaks/freezeframe.js/master/build/css/freezeframe_styles.min.css" media="all">
+<link rel="stylesheet" href="../src/gif-player.style.css">
+<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
+<script>
+
+    (function () {
+        var gifs = [
+            'http://static1.squarespace.com/static/51c748abe4b0c275d0aa86bf/55f96e21e4b0f86680e762dc/56aa551b8b38d446e39e933b/1454003533097/.gif',
+            'http://static1.squarespace.com/static/51c748abe4b0c275d0aa86bf/56141631e4b0095d43132f02/5614164be4b018c0454fd619/1444744841735/pool980.gif'
+        ];
+
+        angular.module('gif-player-demo', ['gif-player'])
+            .controller('demoCtrl', demoCtrl)
+        ;
+        function demoCtrl($http, $window) {
+            var $ctrl = this;
+
+            $ctrl.gifs = gifs;
+        }
+    })();
+</script>
+<style>
+    .grid {
+        width: 980px;
+        margin: 0 auto;
+    }
+
+    gif-player {
+        margin: 20px;
+    }
+</style>
+<div ng-app="gif-player-demo">
+    <div class="grid" ng-controller="demoCtrl as $ctrl">
+
+        <gif-player src="gif" ng-repeat="gif in $ctrl.gifs"></gif-player>
+
+    </div>
+</div>

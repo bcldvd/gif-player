@@ -1,0 +1,30 @@
+gif-player {
+    position: relative;
+    display: flex;
+}
+
+gif-player .backdrop {
+    position: absolute;
+    width: 980px;
+    height: 504px;
+    top: 0;
+    left: 0;
+    z-index: 500;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    color: white;
+    font-family: Arial;
+    font-weight: bold;
+}
+
+gif-player .backdrop span {
+    margin: auto;
+    background: #000;
+    padding: 30px 26px;
+    border-radius: 50px;
+    border: 4px dashed;
+}
+
+gif-player:hover .backdrop {
+    display: none;
+}
